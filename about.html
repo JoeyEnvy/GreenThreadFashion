@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenThread - About Our Sustainable Fashion Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #34495e;
+            --accent-color: #e67e22;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        footer {
+            background: var(--secondary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        #about {
+            padding: 120px 0 4rem;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        .about-image {
+            flex: 1;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .about-image:hover {
+            transform: scale(1.02);
+        }
+        .about-text {
+            flex: 1;
+        }
+        .timeline {
+            margin-top: 4rem;
+        }
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+        .timeline-year {
+            font-weight: 600;
+            min-width: 100px;
+        }
+        .timeline-description {
+            margin-left: 2rem;
+            padding-left: 2rem;
+            border-left: 2px solid var(--primary-color);
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .value-item {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .value-item:hover {
+            transform: translateY(-5px);
+        }
+        .value-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 5px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .value-item:hover img {
+            transform: scale(1.1);
+        }
+        .transparency-section {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .transparency-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 5px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .transparency-image:hover {
+            transform: scale(1.1);
+        }
+        .materials-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .material-item {
+            flex-basis: calc(50% - 1rem);
+            margin-bottom: 2rem;
+        }
+        .material-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .material-item img:hover {
+            transform: scale(1.03);
+        }
+        .commitment-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .commitment-image:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <h1>GreenThread</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h1>About GreenThread</h1>
+            <div class="about-content">
+                <div class="about-image" style="background-image: url('C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/13.jpg');"></div>
+                <div class="about-text">
+                    <h2>Our Mission</h2>
+                    <p>At GreenThread, we believe that fashion can be both stylish and sustainable. Our mission is to create eco-friendly clothing that doesn't compromise on quality or design, while minimizing our impact on the environment.</p>
+                    <p>We're committed to using only sustainable materials, ensuring fair labor practices, and maintaining a carbon-neutral production process. Our goal is to lead the fashion industry towards a more sustainable future, one garment at a time.</p>
+                </div>
+            </div>
+
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/12.jpg" alt="Sustainability Icon">
+                    <h3>Sustainability</h3>
+                    <p>We use eco-friendly materials and processes to minimize our environmental impact.</p>
+                </div>
+                <div class="value-item">
+                    <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/11.jpg" alt="Quality Icon">
+                    <h3>Quality</h3>
+                    <p>We believe sustainable fashion should be durable and long-lasting.</p>
+                </div>
+                <div class="value-item">
+                    <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/10.jpg" alt="Innovation Icon">
+                    <h3>Innovation</h3>
+                    <p>We constantly seek new ways to improve our products and processes.</p>
+                </div>
+            </div>
+            <div class="transparency-section">
+                <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/9.jpg" alt="Transparency Icon" class="transparency-image">
+                <h3>Transparency</h3>
+                <p>We're open about our practices and supply chain to build trust with our customers.</p>
+            </div>
+
+            <h2>Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-description">
+                        <h3>The Beginning</h3>
+                        <p>GreenThread was founded by Sarah and Mike Johnson, two fashion industry veterans who wanted to make a difference. They started with a small collection of organic cotton t-shirts.</p>
+                        <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/8.jpg" alt="GreenThread Founding" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px; margin-top: 1rem; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-description">
+                        <h3>Expansion</h3>
+                        <p>We opened our first physical store in San Francisco and expanded our product line to include accessories made from recycled materials. Our online presence grew, reaching customers nationwide.</p>
+                        <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/7.jpg" alt="GreenThread Expansion" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px; margin-top: 1rem; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-description">
+                        <h3>Carbon Neutral</h3>
+                        <p>After years of hard work, we achieved our goal of becoming a carbon-neutral company. We implemented innovative recycling programs and partnered with environmental organizations to offset our emissions.</p>
+                        <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/6.jpg" alt="Carbon Neutral Achievement" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px; margin-top: 1rem; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-description">
+                        <h3>Global Reach</h3>
+                        <p>GreenThread products are now available in over 20 countries. We've collaborated with international designers and expanded our range to include sustainable formal wear and activewear.</p>
+                        <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/5.jpg" alt="Global Reach" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px; margin-top: 1rem; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+
+            <h2>Our Materials</h2>
+            <p>We carefully select our materials to ensure they meet our high standards for sustainability and quality:</p>
+            <div class="materials-list">
+                <div class="material-item">
+                    <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/4.jpg" alt="Organic Cotton">
+                    <h3>Organic Cotton</h3>
+                    <p>Grown without harmful pesticides or synthetic fertilizers.</p>
+                </div>
+                <div class="material-item">
+                    <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/3.jpg" alt="Recycled Polyester">
+                    <h3>Recycled Polyester</h3>
+                    <p>Made from post-consumer plastic bottles, reducing waste.</p>
+                </div>
+                <div class="material-item">
+                    <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/2.jpg" alt="Tencel">
+                    <h3>Tencel</h3>
+                    <p>A sustainable fabric made from wood pulp in a closed-loop process.</p>
+                </div>
+                <div class="material-item">
+                    <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/13.jpg" alt="Hemp">
+                    <h3>Hemp</h3>
+                    <p>A durable, naturally pest-resistant crop that requires minimal water.</p>
+                </div>
+            </div>
+
+            <h2>Our Commitment to Fair Labor</h2>
+            <p>We believe in ethical production and fair treatment of workers. All our partner factories are regularly audited to ensure they meet our strict standards for worker safety, fair wages, and good working conditions. We're proud members of the Fair Wear Foundation and are committed to continual improvement in our supply chain.</p>
+            <img src="C:/Users/User/Desktop/Portfolio Templates/3 - GreenThread Fashion/images/Page 3/12.jpg" alt="Fair Labor Commitment" class="commitment-image">
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 GreenThread. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

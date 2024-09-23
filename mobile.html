@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenThread - Sustainable Fashion for a Better World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #34495e;
+            --accent-color: #e67e22;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background: #d35400;
+            transform: translateY(-3px);
+        }
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(46, 204, 113, 0.7), rgba(52, 73, 94, 0.7)), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+            color: #ffffff;
+            padding-top: 80px;
+        }
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        #features {
+            padding: 4rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .feature {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        .feature img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+        #latest-products {
+            padding: 4rem 0;
+            background-color: var(--secondary-color);
+            color: #ffffff;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        .product-details {
+            padding: 1rem;
+            color: var(--text-color);
+        }
+        footer {
+            background: var(--secondary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav ul {
+                margin-top: 1rem;
+            }
+            nav ul li {
+                margin-left: 0;
+                margin-right: 1.5rem;
+            }
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <h1>GreenThread</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Sustainable Fashion for a Better World</h1>
+            <p>Eco-friendly clothing that doesn't compromise on style</p>
+            <a href="products.html" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <div class="feature">
+                <img src="https://via.placeholder.com/80" alt="Eco-friendly Icon">
+                <h3>100% Eco-friendly</h3>
+                <p>All our materials are sustainably sourced and biodegradable</p>
+            </div>
+            <div class="feature">
+                <img src="https://via.placeholder.com/80" alt="Fair Trade Icon">
+                <h3>Fair Trade Certified</h3>
+                <p>We ensure fair wages and safe working conditions for all our artisans</p>
+            </div>
+            <div class="feature">
+                <img src="https://via.placeholder.com/80" alt="Carbon Neutral Icon">
+                <h3>Carbon Neutral</h3>
+                <p>Our production process is entirely carbon neutral</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="latest-products">
+        <div class="container">
+            <h2>Latest Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://via.placeholder.com/300x250');"></div>
+                    <div class="product-details">
+                        <h3>Organic Cotton Tee</h3>
+                        <p>$29.99</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://via.placeholder.com/300x250');"></div>
+                    <div class="product-details">
+                        <h3>Hemp Denim Jeans</h3>
+                        <p>$79.99</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://via.placeholder.com/300x250');"></div>
+                    <div class="product-details">
+                        <h3>Bamboo Fiber Dress</h3>
+                        <p>$59.99</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 GreenThread. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
